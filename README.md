@@ -10,7 +10,7 @@ This project implements a high-precision, production-grade Retrieval-Augmented G
 
 Designed around **lecture transcripts and course materials**, the system features:
 - **Two-Stage Retrieval**: Vector similarity search (bi-encoder) combined with cross-encoder re-ranking.
-- **Strict Faithfulness Grounding**: Grounded generation via Gemini 2.0 Flash with automatic abstention when context is insufficient.
+- **Strict Faithfulness Grounding**: Grounded generation via Gemini 3.8 Flash with automatic abstention when context is insufficient.
 - **Interactive UI**: Real-time Streamlit chat interface with tunable retrieval parameters and full context inspection.
 - **Eval-Driven Architecture**: Exposes the full RAG triad (`query`, `context`, `answer`) for continuous evaluation of Faithfulness, Answer Relevance, and Context Precision.
 
@@ -101,8 +101,8 @@ cp .env.example .env
 Add your Gemini API key to `.env`:
 ```env
 GEMINI_API_KEY=your_actual_gemini_api_key_here
-GENERATOR_MODEL=gemini-2.0-flash
-JUDGE_MODEL=gemini-2.0-flash
+GENERATOR_MODEL=gemini-3.8-flash
+JUDGE_MODEL=gemini-3.8-flash
 ```
 
 ### 4. Run the Application
@@ -110,7 +110,7 @@ JUDGE_MODEL=gemini-2.0-flash
 Launch the Streamlit web interface:
 
 ```bash
-streamlit run src/app.py
+python -m streamlit run src/app.py
 ```
 
 Open `http://localhost:8501` in your browser.
